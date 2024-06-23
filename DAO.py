@@ -4,7 +4,7 @@ class DAO():
         pass
 
     @staticmethod
-    def getAllMetodi():
+    def nome1():
         conn = DBConnect.get_connection()
 
         result = []
@@ -13,30 +13,30 @@ class DAO():
         query = """"""
         cursor.execute(query)
         for row in cursor:
-            result.append(
-                Metodo(**row))
+            result.append()
         cursor.close()
         conn.close()
         return result
 
     @staticmethod
-    def getAllProdotti():
+    def nome2():
         conn = DBConnect.get_connection()
 
         result = []
 
         cursor = conn.cursor(dictionary=True)
         query = """"""
-        cursor.execute(query, (method, ))
+        cursor.execute(query, ())
         for row in cursor:
             result.append(
-                Prodotto(**row))
+                )
+            #Prodotto(**row)
         cursor.close()
         conn.close()
         return result
 
     @staticmethod
-    def getAllProfit():
+    def nome3():
         conn = DBConnect.get_connection()
 
         result = []
@@ -47,7 +47,7 @@ class DAO():
         cursor.execute(query,)
 
         for row in cursor:
-            result.append(**row)
+            result.append()
 
         cursor.close()
         conn.close()
@@ -88,9 +88,8 @@ class DAO():
             self._view.txt_result.controls.append(ft.Text(f"Errore nell'inserimento delle calorie!!"))
             self._view.update_page()
             return
-        self._model.buildGraph(calorie_float)
+        self._model.buildGraph()
         self._view.txt_result.controls.append(ft.Text(f"Grafo correttamente creato!"))
-        self._model.buildGraph(calorie_float)
         nNodes, nEdges = self._model.getCaratteristiche()
         self._view.txt_result.controls.append(ft.Text(f"Il grafo creato ha {nNodes} nodi"))
         self._view.txt_result.controls.append(ft.Text(f"Il grafo creato ha {nEdges} archi"))
