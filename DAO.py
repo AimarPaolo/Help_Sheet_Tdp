@@ -93,7 +93,7 @@ class DAO():
         nNodes, nEdges = self._model.getCaratteristiche()
         self._view.txt_result.controls.append(ft.Text(f"Il grafo creato ha {nNodes} nodi"))
         self._view.txt_result.controls.append(ft.Text(f"Il grafo creato ha {nEdges} archi"))
-        self._view.page_update()
+        self._view.update_page()
 
 #nel caso si volesse aggiungere un fillDD nel CONTROLLER
     def fillDD(self):
