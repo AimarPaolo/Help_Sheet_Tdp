@@ -115,3 +115,14 @@ class DAO():
         dlg.open = True
         self._page.update()
 
+#query utilizzabile in diversi casi
+select t1.tipo, t2.tipo2, t1.c1, count(distinct t1.c1)
+from (select p.food_code as c1, p.portion_display_name as tipo
+from food_pyramid_mod.portion p
+where p.calories <400) as t1,
+(select p.food_code as c2, p.portion_display_name as tipo2
+from food_pyramid_mod.portion p
+where p.calories <400) as t2
+where t1.tipo != t2.tipo2 and t1.c1 = t2.c2 and t1.tipo < t2.tipo2
+group by t1.tipo, t2.tipo2
+
