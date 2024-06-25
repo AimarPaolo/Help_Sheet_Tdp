@@ -115,7 +115,7 @@ class DAO():
         dlg.open = True
         self._page.update()
 
-#query utilizzabile in diversi casi!!
+#query utilizzabile in diversi casi!
 select t1.tipo, t2.tipo2, t1.c1, count(distinct t1.c1)
 from (select p.food_code as c1, p.portion_display_name as tipo
 from food_pyramid_mod.portion p
