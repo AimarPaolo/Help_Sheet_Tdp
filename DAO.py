@@ -54,6 +54,17 @@ class DAO():
         return result
 
 # Copia incolla MODEL per fare getCaratteristiche
+    def __init__(self):
+        self._grafo = nx.Graph()
+        self.nodi = []
+        self.idMap = {}
+
+    def buildGraph(self):
+        self._grafo.clear()
+        self.addEdges()
+
+    def addEdges(self):
+        self._grafo.clear_edges()
 
     def ricorsione(self, parziale, v0):
         if v0 in parziale:
