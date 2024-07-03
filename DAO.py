@@ -102,6 +102,11 @@ class DAO():
         self._model.buildGraph()
         self._view.txt_result.controls.append(ft.Text(f"Grafo correttamente creato!"))
         nNodes, nEdges = self._model.getCaratteristiche()
+        if nNodes == 0 and nEdges == 0:
+            self._view.txt_result.controls.clear()
+            self._view.txt_result.controls.append(ft.Text("Attenzione, grafo vuoto."))
+            self._view.update_page()
+            return
         self._view.txt_result.controls.append(ft.Text(f"Il grafo creato ha {nNodes} nodi"))
         self._view.txt_result.controls.append(ft.Text(f"Il grafo creato ha {nEdges} archi"))
         self._view.update_page()
